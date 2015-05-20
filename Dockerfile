@@ -2,6 +2,7 @@ FROM nimmis/ubuntu:14.04
 
 MAINTAINER patrickke <kepeng1314@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 RUN apt-get install -y software-properties-common && \
