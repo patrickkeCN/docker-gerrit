@@ -1,4 +1,4 @@
-FROM sameersbn/ubuntu:latest
+FROM nimmis/ubuntu:14.04
 
 MAINTAINER patrickke <kepeng1314@gmail.com>
 
