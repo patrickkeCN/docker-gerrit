@@ -1,12 +1,17 @@
-FROM java:openjdk-7-jre
+FROM sameersbn/ubuntu:latest
 
 MAINTAINER patrickke <kepeng1314@gmail.com>
+
+ENV JAVA_VERSION 7u79
+ENV JAVA_DEBIAN_VERSION 7u79-2.5.5-1~deb8u1
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libcgi-pm-perl \
     gitweb \
     vim \
+    openjdk-7-jre-headless="$JAVA_DEBIAN_VERSION" \
   && rm -rf /var/lib/apt/lists/*
+
 ENV GERRIT_HOME /var/gerrit
 ENV GERRIT_SITE ${GERRIT_HOME}/review_site
 ENV GERRIT_WAR ${GERRIT_HOME}/gerrit.war
