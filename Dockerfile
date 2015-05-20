@@ -1,15 +1,6 @@
-FROM nimmis/ubuntu:14.04
+FROM nimmis/java:openjdk-7-jre
 
 MAINTAINER patrickke <kepeng1314@gmail.com>
-
-ENV DEBIAN_FRONTEND noninteractive
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-
-RUN apt-get install -y software-properties-common && \
-add-apt-repository ppa:openjdk-r/ppa -y && \
-apt-get update && \
-apt-get install -y --no-install-recommends openjdk-8-jre && \
-rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libcgi-pm-perl \
