@@ -9,7 +9,7 @@ RUN add-apt-repository ppa:openjdk-r/ppa -y && \
     libcgi-pm-perl \
     gitweb \
     vim \
-    apt-get install -y --no-install-recommends openjdk-8-jre && \
+    apt-get install -y --no-install-recommends openjdk-8-jre \
   && rm -rf /var/lib/apt/lists/*
 
 ENV GERRIT_HOME /var/gerrit
