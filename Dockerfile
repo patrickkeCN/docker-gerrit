@@ -2,14 +2,14 @@ FROM sameersbn/ubuntu:latest
 
 MAINTAINER patrickke <kepeng1314@gmail.com>
 
-ENV JAVA_VERSION 7u79
-ENV JAVA_DEBIAN_VERSION 7u79-2.5.5-1~deb8u1
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN add-apt-repository ppa:openjdk-r/ppa -y && \
+    apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libcgi-pm-perl \
     gitweb \
     vim \
-    openjdk-7-jre-headless="$JAVA_DEBIAN_VERSION" \
+    apt-get install -y --no-install-recommends openjdk-8-jre && \
   && rm -rf /var/lib/apt/lists/*
 
 ENV GERRIT_HOME /var/gerrit
