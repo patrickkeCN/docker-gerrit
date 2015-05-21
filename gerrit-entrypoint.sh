@@ -58,8 +58,8 @@ if [ "$1" = '/var/gerrit/gerrit-start.sh' ]; then
   if [ "${AUTH_TYPE}" = 'HTTP' ]; then
     git config -f "${GERRIT_SITE}/etc/gerrit.config" auth.type "${AUTH_TYPE}"
 	git config -f "${GERRIT_SITE}/etc/gerrit.config" auth.gitBasicAuth true
-#    git config -f "${GERRIT_SITE}/etc/gerrit.config" auth.httpHeader no
   fi
+  
   # section container
   [ -z "${JAVA_HEAPLIMIT}" ] || git config -f "${GERRIT_SITE}/etc/gerrit.config" container.heapLimit "${JAVA_HEAPLIMIT}"
   [ -z "${JAVA_OPTIONS}" ] || git config -f "${GERRIT_SITE}/etc/gerrit.config" container.javaOptions "${JAVA_OPTIONS}"
