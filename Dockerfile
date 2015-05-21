@@ -15,6 +15,7 @@ ENV GERRIT_VERSION 2.10.4
 ENV GERRIT_USER gerrit2
 
 RUN useradd -m -d "$GERRIT_HOME" -u 1000 -U  -s /bin/bash $GERRIT_USER
+RUN echo '"$GERRIT_HOME" ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 #Download gerrit.war
 RUN curl -L https://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war -o $GERRIT_WAR
