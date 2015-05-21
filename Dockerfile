@@ -1,11 +1,12 @@
-FROM nimmis/java:openjdk-7-jre
-
+#FROM nimmis/java:openjdk-7-jre
+FROM java:openjdk-7-jre
 MAINTAINER patrickke <kepeng1314@gmail.com>
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libcgi-pm-perl \
     gitweb \
 	vim \
+	sudo \
   && rm -rf /var/lib/apt/lists/*
 ENV GERRIT_HOME /var/gerrit
 ENV GERRIT_SITE ${GERRIT_HOME}/review_site
