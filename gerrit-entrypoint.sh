@@ -57,7 +57,9 @@ if [ "$1" = '/var/gerrit/gerrit-start.sh' ]; then
   #Section http
   if [ "${AUTH_TYPE}" = 'HTTP' ]; then
     git config -f "${GERRIT_SITE}/etc/gerrit.config" auth.type "${AUTH_TYPE}"
-	git config -f "${GERRIT_SITE}/etc/gerrit.config" auth.gitBasicAuth true
+#	git config -f "${GERRIT_SITE}/etc/gerrit.config" auth.gitBasicAuth true
+	git config -f "${GERRIT_SITE}/etc/gerrit.config" --unset auth.httpHeader
+#	git config -f "${GERRIT_SITE}/etc/gerrit.config" auth.emailFormat '{0}@17usoft.com'
   fi
   
   # section container
